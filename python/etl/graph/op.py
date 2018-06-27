@@ -27,7 +27,7 @@ class Op(object):
                 if type(inp) != Variable:
                     raise TypeError("Received input of unexpected type: " + str(type(inp)) + ".")
         elif not isinstance(inputs, Variable):
-            raise TypeError("Received input of unexpected type: " + str(type(inp)) + ".")
+            raise TypeError("Received input of unexpected type: " + str(type(inputs)) + ".")
         output = Variable()
         output.op = self
         output.inputs = inputs

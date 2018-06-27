@@ -115,14 +115,15 @@ class Graph(Op):
 
     @classmethod
     def deserialize(cls, config):
-
         index_to_var = {}
         get_var = Graph._get_var
         nodes = []
-        exec('from ..ops import *')
+        exec('from ..ops import *', globals())
         for node in config['nodes']:
-            node_class = node['class_name']
-            node_class = globals()[node_class]
+            node_class_name = node['class_name']
+            node_class = globals().get(node_class_name, None)
+            if not node_class:
+                raise Exception("Unknown Op : " + node_class_name)
             nodes.append(node_class.deserialize(node['config']))
 
         connectome = config['connectome']
