@@ -36,7 +36,9 @@ class Graph(Op):
             temp = temp2
         self.nodes = list(set([x.op for x in vars if x.op is not None]))
 
-    def execute(self, inputs):
+    def execute(self, inputs=None):
+        if inputs is None:
+            inputs = [None for _ in range(len(self.inputs))]
         if type(inputs) != list:
             if type(inputs) is tuple:
                 inputs = list(inputs)
