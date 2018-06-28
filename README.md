@@ -1,10 +1,11 @@
 # ETL library for SKIL
 
 ## Key features:
-    * Define transform process as a graph in python
-    * Test transform process on dummy data in python
-    * Get serialized (json) graph
-    * Execute the graph in java on real data
+
+* Define transform process as a graph in python
+* Test transform process on dummy data in python
+* Get serialized (json) graph
+* Execute the graph in java on real data
     
 
 ## Example:
