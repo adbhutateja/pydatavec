@@ -27,6 +27,8 @@ Add shade plug-in to datavec's `pom.xml`:
 <execution>
 <phase>package</phase>
 <goals>
+<goal>shade</goal>
+</goals>
 </execution>
 </executions>
 </plugin>
