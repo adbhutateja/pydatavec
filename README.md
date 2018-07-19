@@ -23,8 +23,8 @@ Add shade plug-in to datavec's `pom.xml`:
 <version>3.1.1</version>
 <configuration>
 </configuration>
--<executions>
--<execution>
+<executions>
+<execution>
 <phase>package</phase>
 <goals>
 </execution>
