@@ -109,6 +109,7 @@ class TransformProcess(object):
 
     def serialize(self):
         config = {'steps' : self.steps, 'schema' : self.schema.serialize()}
+        return config
 
     @classmethod
     def deserialize(cls, config):
