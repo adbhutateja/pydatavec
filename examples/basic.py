@@ -70,4 +70,14 @@ tp.derive_column_from_time(source_column="DateTime", new_column="HourOfDay", fie
 # We no longer need our "DateTime" column, as we've extracted what we need from it. So let's remove it
 tp.remove_column("DateTime")
 
-tp.to_java()
+# Run the transform process over file exampledata.csv using spark:
+
+result = tp('exampledata.csv')
+
+# `result` is a StringRDD object. You can save it to a csv file using:
+
+result.save_to_csv('output.csv')
+
+# Or you can get a python list of strings:
+
+print(list(result))

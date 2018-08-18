@@ -15,6 +15,7 @@ else:
 
 jnius_config.set_classpath(class_path)
 
+# -------------JVM starts here-------------
 from jnius import autoclass
 
 
@@ -53,3 +54,15 @@ HashSet = autoclass('java.util.HashSet')
 
 JDouble = autoclass('java.lang.Double')
 JFloat = autoclass('java.lang.Float')
+
+
+SparkConf = autoclass('org.apache.spark.SparkConf')
+SparkContext = autoclass('org.apache.spark.api.java.JavaSparkContext')
+JavaRDD = autoclass('org.apache.spark.api.java.JavaRDD')
+SparkTransformExecutor = autoclass('org.datavec.spark.transform.SparkTransformExecutor')
+
+CSVRecordReader = autoclass('org.datavec.api.records.reader.impl.csv.CSVRecordReader')
+StringToWritablesFunction = autoclass('org.datavec.spark.transform.misc.StringToWritablesFunction')
+WritablesToStringFunction = autoclass('org.datavec.spark.transform.misc.WritablesToStringFunction')
+
+LocalTransformExecutor = autoclass('org.datavec.local.transforms.LocalTransformExecutor')

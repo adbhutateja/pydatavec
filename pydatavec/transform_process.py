@@ -148,4 +148,11 @@ class TransformProcess(object):
                 f(*step[1:])
         return builder.build()
 
-        
+    def __call__(self, csv):
+        try:
+            executor = self.executor
+        except AttributeError:
+            from .executors import SparkExecutor
+            executor = SparkExecutor()
+            self.executor = executor
+        return executor(self, csv)
