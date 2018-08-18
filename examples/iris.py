@@ -21,7 +21,7 @@ if not os.path.isfile(filename):
     os.rename(temp_filename, filename)
 
 # We use pyspark to filter empty lines
-sc=pyspark.SparkContext(master='local[*]', appName='iris')
+sc = pyspark.SparkContext(master='local[*]', appName='iris')
 data = sc.textFile('iris.data')
 filtered_data = data.filter(lambda x: len(x) > 0)
 
