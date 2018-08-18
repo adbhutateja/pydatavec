@@ -73,6 +73,8 @@ tp.remove_column("DateTime")
 # Run the transform process over file exampledata.csv using spark:
 
 result = tp('exampledata.csv')
+result.save('temp')
+
 
 # `result` is a StringRDD object. You can save it to a csv file using:
 
