@@ -38,6 +38,6 @@ tp = TransformProcess(input_schema)
 tp.categorical_to_integer("Species")
 
 # Do the transformation on spark
-output = SparkExecutor()(tp, filtered_data)
+output = tp(filtered_data)
 
 print(list(output))
